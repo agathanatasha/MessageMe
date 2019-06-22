@@ -1,0 +1,6 @@
+<% flash.each do |name, msg| %>
+  <div class="ui message big <%= name %>">
+    <i class="close icon"></i>
+    <%= content_tag :p, msg%>
+  </div>
+<% end %>
