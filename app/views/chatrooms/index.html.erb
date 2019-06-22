@@ -1,3 +1,4 @@
+<%= render 'layouts/error_messages', obj: @message %>
 <h2 class="ui center aligned icon header">
   <i class="circular red comment icon"></i>
   Chatroom
@@ -11,14 +12,15 @@
         </div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_for(@message, :html => {class: "ui reply form", role: "form"}, url: message_path) do |f|%>
           <div class="field">
             <div class="ui fluid icon input">
-              <input type="text" placeholder="write something">
-              <i class="icon bordered inverted red edit"></i>
+              <%= f.text_field :body, placeholder: "Write something" %>
+              
+                <%= f.button '<i class="icon bordered inverted red edit"></i>'.html_safe %>
             </div>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
