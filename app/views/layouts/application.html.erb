@@ -13,8 +13,9 @@
   <body>
     <%= render 'layouts/navigation' %>
     <div class="ui container">
-      <%= render 'messages/flash_messages' %>
+      <%= render 'layouts/flash_messages' %>
       <%= yield %>
+      <%= debug(params) %>
     </div>
   </body>
 </html>
