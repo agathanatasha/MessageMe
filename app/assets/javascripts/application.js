@@ -16,6 +16,15 @@
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
-$(document).on('turbolinks:load', function (){
+$(document).on('turbolinks:load', function () {
+    // dropdown in navbar
     $('.ui.dropdown').dropdown();
+
+    // dimiss flash messages
+    $('.message .close').on('click', function () {
+        $(this)
+            .closest('.message')
+            .transition('fade')
+            ;
+    });
 })
